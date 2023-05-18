@@ -1,0 +1,22 @@
+const Promise1 = new Promise ((resolve,reject) => {
+                 setTimeout ( () => 
+                 resolve ('Promise1 resolved'), 10000 );
+});
+
+const Promise2 = new Promise ((resolve,reject) => {
+                 setTimeout  ( () => 
+                 resolve ('Promise2 resolved'), 10000);
+});
+
+const Promise3 = new Promise ( (resolve,reject) => {
+                 setTimeout ( () =>
+                 resolve ('Promise3 resolved'), 10000);
+});
+
+Promise.all ([
+    Promise1,
+    Promise2,
+    Promise3
+]).then ((message) => {
+   console.log (message);
+})
